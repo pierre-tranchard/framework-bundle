@@ -1,0 +1,47 @@
+{
+  "name": "spark/framework-bundle",
+  "description": "2Spark Framework Bundle",
+  "type": "bundle",
+  "authors": [
+    {
+      "name": "pierretranchard",
+      "email": "pierre.tranchard@2spark.com"
+    }
+  ],
+  "keywords": [
+    "2Spark Framework Bundle"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "php": ">=5.4.37"
+  },
+  "require-dev": {
+    "symfony/symfony": "~2.7@beta",
+    "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+    "doctrine/dbal": "<2.5",
+    "doctrine/doctrine-bundle": "~1.4",
+    "symfony/assetic-bundle": "~2.3",
+    "symfony/swiftmailer-bundle": "~2.3",
+    "symfony/monolog-bundle": "~2.4",
+    "sensio/distribution-bundle": "~3.0,>=3.0.12",
+    "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
+    "incenteev/composer-parameter-handler": "~2.0",
+    "phpunit/phpunit": "^4.7",
+    "doctrine/mongodb-odm": "1.0.*@dev",
+    "doctrine/mongodb-odm-bundle": "3.0.*@dev"
+  },
+  "autoload": {
+    "psr-4": {"Spark\\FrameworkBundle\\": ""}
+  },
+  "autoload-dev": {
+    "psr-4": {"Spark\\FrameworkBundle\\Tests\\": "Tests/"}
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
