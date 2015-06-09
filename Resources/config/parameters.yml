@@ -1,0 +1,2 @@
+parameters:
+    spark_framework.form.factory.class: Spark\FrameworkBundle\Form\Factory\FormFactory
