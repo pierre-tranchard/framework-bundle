@@ -25,9 +25,7 @@ class SparkFrameworkExtension extends Extension
         $config        = $this->processConfiguration($configuration, $configs);
 
         $this->loadXMLFiles(new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
-
         $this->loadYAMLFiles(new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
-
     }
 
     /**
