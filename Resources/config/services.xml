@@ -13,6 +13,10 @@
         <service id="spark_framework.services.logger" class="Spark\FrameworkBundle\Component\Logger">
             <argument>%kernel.root_dir%</argument>
         </service>
+        <service id="spark_framework.event.subscriber.doctrine.table_prefix_subscriber" class="Spark\FrameworkBundle\Event\Subscriber\Doctrine\TablePrefixSubscriber">
+            <argument type="expression">container.hasParameter('table_prefix') ? parameter('table_prefix') : null</argument>
+            <tag name="doctrine.event_subscriber" />
+        </service>
     </services>
 
 </container>
