@@ -22,11 +22,28 @@ class SparkFrameworkExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config        = $this->processConfiguration($configuration, $configs);
 
-        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $xmlLoader->load('services.xml');
-        $yamlLoader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $yamlLoader->load('parameters.yml');
+        $this->loadXMLFiles(new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
+
+        $this->loadYAMLFiles(new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
+
+    }
+
+    /**
+     * @param Loader\XmlFileLoader $loader
+     */
+    protected function loadXMLFiles(Loader\XmlFileLoader $loader)
+    {
+        $loader->load('services.xml');
+        $loader->load('validator.xml');
+    }
+
+    /**
+     * @param Loader\YamlFileLoader $loader
+     */
+    protected function loadYAMLFiles(Loader\YamlFileLoader $loader)
+    {
+        $loader->load('parameters.yml');
     }
 }

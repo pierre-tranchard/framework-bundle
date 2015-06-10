@@ -30,7 +30,8 @@
     "incenteev/composer-parameter-handler": "~2.0",
     "phpunit/phpunit": "^4.7",
     "doctrine/mongodb-odm": "1.0.*@dev",
-    "doctrine/mongodb-odm-bundle": "3.0.*@dev"
+    "doctrine/mongodb-odm-bundle": "3.0.*@dev",
+    "knplabs/knp-paginator-bundle": "^2.4"
   },
   "autoload": {
     "psr-4": {"Spark\\FrameworkBundle\\": ""}

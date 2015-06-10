@@ -13,10 +13,6 @@
         <service id="spark_framework.services.logger" class="Spark\FrameworkBundle\Component\Logger">
             <argument>%kernel.root_dir%</argument>
         </service>
-        <service id="spark_framework.validator.unique.document" class="Spark\FrameworkBundle\Validator\Constraints\UniqueDocumentValidator">
-            <argument type="service" id="doctrine_mongodb" />
-            <tag name="validator.constraint_validator" alias="unique_document_validator" />
-        </service>
     </services>
 
 </container>
