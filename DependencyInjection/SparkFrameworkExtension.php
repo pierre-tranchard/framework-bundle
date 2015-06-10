@@ -37,6 +37,7 @@ class SparkFrameworkExtension extends Extension
     {
         $loader->load('services.xml');
         $loader->load('validator.xml');
+        $loader->load('paginator.xml');
     }
 
     /**
