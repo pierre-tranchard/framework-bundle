@@ -45,19 +45,25 @@ class TablePrefixSubscriber implements EventSubscriber
     {
         /** @var ClassMetadataInfo $classMetadata */
         $classMetadata = $eventArgs->getClassMetadata();
-        if (is_null($this->prefix) === false && strlen($this->prefix)) {
+        if (is_null($this->prefix) === false && strlen($this->prefix) > 0) {
             if (0 !== strpos($classMetadata->getTableName(), $this->prefix)) {
-                $classMetadata->setPrimaryTable(array('name' => $this->prefix . $classMetadata->getTableName()));
+                $classMetadata->setPrimaryTable(
+                    array('name' => sprintf("%s%s", $this->prefix, $classMetadata->getTableName()))
+                );
             }
-        }
-        foreach ($classMetadata->getAssociationMappings() as $fieldName => $mapping) {
-            if ($mapping['type'] == ClassMetadataInfo::MANY_TO_MANY) {
-                if (!isset($classMetadata->associationMappings[$fieldName]['joinTable'])) {
-                    continue;
-                }
-                $mappedTableName = $classMetadata->associationMappings[$fieldName]['joinTable']['name'];
-                if (0 !== strpos($mappedTableName, $this->prefix)) {
-                    $classMetadata->associationMappings[$fieldName]['joinTable']['name'] = $this->prefix . $mappedTableName;
+            foreach ($classMetadata->getAssociationMappings() as $fieldName => $mapping) {
+                if ($mapping['type'] == ClassMetadataInfo::MANY_TO_MANY) {
+                    if (!isset($classMetadata->associationMappings[$fieldName]['joinTable'])) {
+                        continue;
+                    }
+                    $mappedTableName = $classMetadata->associationMappings[$fieldName]['joinTable']['name'];
+                    if (0 !== strpos($mappedTableName, $this->prefix)) {
+                        $classMetadata->associationMappings[$fieldName]['joinTable']['name'] = sprintf(
+                            "%s%s",
+                            $this->prefix,
+                            $mappedTableName
+                        );
+                    }
                 }
             }
         }
