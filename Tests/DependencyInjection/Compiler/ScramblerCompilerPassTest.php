@@ -56,9 +56,13 @@ class ScramblerCompilerPassTest extends \PHPUnit_Framework_TestCase
                 'random_client' => $randomClientKey
             )
         );
+        $containerBuilder->setParameter(
+            'spark_framework.component.scrambler.class',
+            '\Spark\FrameworkBundle\Component\Scrambler'
+        );
 
         $compilerPass->process($containerBuilder);
-        $scrambler = $containerBuilder->get('spark_library.component.scrambler.random_client');
+        $scrambler = $containerBuilder->get('spark_framework.component.scrambler.random_client');
         $this->assertInstanceOf(
             '\Spark\FrameworkBundle\Component\Scrambler',
             $scrambler
