@@ -1,3 +1,4 @@
 parameters:
     spark_framework.form.factory.class: Spark\FrameworkBundle\Form\Factory\FormFactory
     spark_framework.component.scrambler.class: Spark\FrameworkBundle\Component\Scrambler
+    spark_framework.component.otp_generator.class: Spark\FrameworkBundle\Component\OTPGenerator

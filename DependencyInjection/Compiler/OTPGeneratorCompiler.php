@@ -37,9 +37,14 @@ class OTPGeneratorCompiler implements CompilerPassInterface
 
             if (is_array($otpClients)) {
                 foreach ($otpClients as $client => $otpOptions) {
-                    $definition = new Definition('Spark\FrameworkBundle\Component\OTPGenerator', $otpOptions);
+                    $definition = new Definition(
+                        $container->getParameter('spark_framework.component.otp_generator.class'), $otpOptions
+                    );
                     $definition->setPublic(false);
-                    $container->setDefinition(sprintf('spark_framework.component.otp_generator.%s', $client), $definition);
+                    $container->setDefinition(
+                        sprintf('spark_framework.component.otp_generator.%s', $client),
+                        $definition
+                    );
                 }
             }
         }
