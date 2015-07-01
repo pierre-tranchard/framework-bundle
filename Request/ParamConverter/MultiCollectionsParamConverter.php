@@ -31,9 +31,9 @@ class MultiCollectionsParamConverter extends DoctrineParamConverter implements P
     /**
      * Constructor
      *
-     * @param ManagerRegistry $managerRegistry
+     * @param ManagerRegistry|null $managerRegistry
      */
-    public function __construct(ManagerRegistry $managerRegistry)
+    public function __construct(ManagerRegistry $managerRegistry = null)
     {
         parent::__construct($managerRegistry);
     }

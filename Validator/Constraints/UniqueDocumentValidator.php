@@ -26,16 +26,16 @@ class UniqueDocumentValidator extends ConstraintValidator
 {
 
     /**
-     * @var ManagerRegistry
+     * @var ManagerRegistry|null
      */
     protected $managerRegistry;
 
     /**
      * Constructor
      *
-     * @param ManagerRegistry $managerRegistry
+     * @param ManagerRegistry|null $managerRegistry
      */
-    public function __construct(ManagerRegistry $managerRegistry)
+    public function __construct(ManagerRegistry $managerRegistry = null)
     {
         $this->managerRegistry = $managerRegistry;
     }

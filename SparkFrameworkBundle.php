@@ -2,7 +2,7 @@
 
 namespace Spark\FrameworkBundle;
 
-use Spark\FrameworkBundle\DependencyInjection\Compiler\OTPGeneratorCompiler;
+use Spark\FrameworkBundle\DependencyInjection\Compiler\OTPGeneratorCompilerPass;
 use Spark\FrameworkBundle\DependencyInjection\Compiler\ScramblerCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -26,6 +26,6 @@ class SparkFrameworkBundle extends Bundle
     {
         parent::build($container);
         $container->addCompilerPass(new ScramblerCompilerPass());
-        $container->addCompilerPass(new OTPGeneratorCompiler());
+        $container->addCompilerPass(new OTPGeneratorCompilerPass());
     }
 }

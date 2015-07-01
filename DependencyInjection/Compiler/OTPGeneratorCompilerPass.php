@@ -1,6 +1,6 @@
 <?php
 /**
- * \file OTPGeneratorCompiler.php
+ * \file OTPGeneratorCompilerPass.php
  * \project Spark
  * \author Pierre TRANCHARD
  * \version 1.0
@@ -16,11 +16,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 /**
- * Class OTPGeneratorCompiler
+ * Class OTPGeneratorCompilerPass
  *
  * @package Spark\ApiBundle\DependencyInjection\Compiler
  */
-class OTPGeneratorCompiler implements CompilerPassInterface
+class OTPGeneratorCompilerPass implements CompilerPassInterface
 {
 
     /**
@@ -40,7 +40,6 @@ class OTPGeneratorCompiler implements CompilerPassInterface
                     $definition = new Definition(
                         $container->getParameter('spark_framework.component.otp_generator.class'), $otpOptions
                     );
-                    $definition->setPublic(false);
                     $container->setDefinition(
                         sprintf('spark_framework.component.otp_generator.%s', $client),
                         $definition

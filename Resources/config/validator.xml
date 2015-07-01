@@ -7,7 +7,7 @@
 
     <services>
         <service id="spark_framework.validator.unique.document" class="Spark\FrameworkBundle\Validator\Constraints\UniqueDocumentValidator">
-            <argument type="service" id="doctrine_mongodb" />
+            <argument type="service" id="doctrine_mongodb" on-invalid="ignore"/>
             <tag name="validator.constraint_validator" alias="unique_document_validator" />
         </service>
     </services>
