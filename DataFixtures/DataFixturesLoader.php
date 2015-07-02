@@ -20,6 +20,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Class DataFixturesLoader
  *
  * @package Spark\FrameworkBundle\DataFixtures
+ *
+ * @codeCoverageIgnore
  */
 abstract class DataFixturesLoader extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {

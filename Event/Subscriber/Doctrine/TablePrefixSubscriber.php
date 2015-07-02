@@ -19,6 +19,8 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
  * Class TablePrefixSubscriber
  *
  * @package Spark\FrameworkBundle\Event\Subscriber\Doctrine
+ *
+ * @codeCoverageIgnore
  */
 class TablePrefixSubscriber implements EventSubscriber
 {

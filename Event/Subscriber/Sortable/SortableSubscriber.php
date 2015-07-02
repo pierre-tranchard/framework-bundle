@@ -21,6 +21,8 @@ use Symfony\Component\HttpFoundation\RequestStack;
  * Class SortableSubscriber
  *
  * @package Spark\FrameworkBundle\Event\Subscriber\Sortable
+ *
+ * @codeCoverageIgnore
  */
 class SortableSubscriber implements EventSubscriberInterface
 {

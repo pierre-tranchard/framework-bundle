@@ -1,6 +1,6 @@
 <?php
 /**
- * \file Grouper.php
+ * \file GrouperInterface.php
  * \project 2spark-Library
  * \author Pierre TRANCHARD
  * \version 1.0
@@ -14,11 +14,11 @@ namespace Spark\FrameworkBundle\Component;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Interface Grouper
+ * Interface GrouperInterface
  *
  * @package Spark\FrameworkBundle\Component
  */
-interface Grouper
+interface GrouperInterface
 {
 
     /**

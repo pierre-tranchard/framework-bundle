@@ -24,6 +24,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * Class MultiCollectionsParamConverter
  *
  * @package Spark\FrameworkBundle\Request\ParamConverter
+ *
+ * @codeCoverageIgnore
  */
 class MultiCollectionsParamConverter extends DoctrineParamConverter implements ParamConverterInterface
 {

@@ -16,7 +16,7 @@ use Spark\FrameworkBundle\Exception\NotImplementedException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-
+error_reporting(-1);
 /**
  * Class UniqueDocumentValidator
  *
@@ -46,34 +46,39 @@ class UniqueDocumentValidator extends ConstraintValidator
      * @param mixed      $value      The value that should be validated
      * @param Constraint $constraint The constraint for the validation
      *
+     * @throws \Exception
      * @api
      */
     public function validate($value, Constraint $constraint)
     {
-        /** @var UniqueDocument $constraint */
+        if (is_null($this->managerRegistry) === false) {
+            /** @var UniqueDocument $constraint */
 
-        $documentManager = $this->managerRegistry->getManager($constraint->dm);
+            $documentManager = $this->managerRegistry->getManager($constraint->dm);
 
-        $repository = $documentManager->getRepository(get_class($value));
-        $method     = $constraint->repositoryMethod;
-        if (method_exists($repository, $method) === false) {
-            throw NotImplementedException::repository($method, get_class($repository));
-        }
-        $fields   = $constraint->fields;
-        $accessor = PropertyAccess::createPropertyAccessor();
-        $fields   = array_flip($fields);
-        foreach ($fields as $field => &$fieldValue) {
-            $fieldValue = $accessor->getValue($value, $field);
-        }
+            $repository = $documentManager->getRepository(get_class($value));
+            $method     = $constraint->repositoryMethod;
+            if (method_exists($repository, $method) === false) {
+                throw NotImplementedException::repository($method, get_class($repository));
+            }
+            $fields   = $constraint->fields;
+            $accessor = PropertyAccess::createPropertyAccessor();
+            $fields   = array_flip($fields);
+            foreach ($fields as $field => &$fieldValue) {
+                $fieldValue = $accessor->getValue($value, $field);
+            }
 
-        $documents      = $repository->$method($fields);
-        $errorPath      = $constraint->errorPath;
-        $errorPathValue = $accessor->getValue($value, $errorPath);
-        $nbOfDocuments = count($documents);
-        if ($nbOfDocuments > 0 && ($value !== $documents[0])) {
-            $this->buildViolation($constraint->alreadyUsed, array('%value%' => $errorPathValue))->atPath(
-                $errorPath
-            )->addViolation();
+            $documents      = $repository->$method($fields);
+            $errorPath      = $constraint->errorPath;
+            $errorPathValue = $accessor->getValue($value, $errorPath);
+            $nbOfDocuments = count($documents);
+            if ($nbOfDocuments > 0 && ($value !== $documents[0])) {
+                $this->buildViolation($constraint->alreadyUsed, array('%value%' => $errorPathValue))->atPath(
+                    $errorPath
+                )->addViolation();
+            }
+        } else {
+            throw new \Exception('You have to construct the validator with a doctrine mongodb manager registry');
         }
     }
 }

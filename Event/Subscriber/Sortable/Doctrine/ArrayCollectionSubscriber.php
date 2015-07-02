@@ -22,6 +22,8 @@ use Symfony\Component\PropertyAccess\PropertyAccessor;
  * Class ArrayCollectionSubscriber
  *
  * @package Spark\FrameworkBundle\Event\Subscriber\Sortable\Doctrine
+ *
+ * @codeCoverageIgnore
  */
 class ArrayCollectionSubscriber implements EventSubscriberInterface
 {

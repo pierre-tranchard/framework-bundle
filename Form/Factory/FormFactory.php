@@ -18,6 +18,8 @@ use Symfony\Component\Form\FormInterface;
  * Class FormFactory
  *
  * @package Spark\FrameworkBundle\Form\Factory
+ *
+ * @codeCoverageIgnore
  */
 class FormFactory
 {

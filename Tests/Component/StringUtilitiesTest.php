@@ -45,4 +45,14 @@ class StringUtilitiesTest extends \PHPUnit_Framework_TestCase
         $fileName = "hello.txt.test";
         $this->assertEquals("hello.txt", StringUtilities::removeFileExtension($fileName));
     }
+
+    /**
+     * Test slugifyer
+     */
+    public function testSlugify()
+    {
+        $this->assertEquals("hello-guys", StringUtilities::slugify("hello guys"));
+        $this->assertEquals("hello-guys", StringUtilities::slugify("Hello Guys"));
+        $this->assertEquals(null, StringUtilities::slugify(""));
+    }
 }
