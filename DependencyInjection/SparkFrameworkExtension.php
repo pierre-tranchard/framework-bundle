@@ -24,14 +24,14 @@ class SparkFrameworkExtension extends Extension
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
 
-        $this->loadXMLFiles(new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
-        $this->loadYAMLFiles(new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
+        static::loadXMLFiles(new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
+        static::loadYAMLFiles(new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config')));
     }
 
     /**
      * @param Loader\XmlFileLoader $loader
      */
-    protected function loadXMLFiles(Loader\XmlFileLoader $loader)
+    protected static function loadXMLFiles(Loader\XmlFileLoader $loader)
     {
         $loader->load('services.xml');
         $loader->load('validator.xml');
@@ -41,7 +41,7 @@ class SparkFrameworkExtension extends Extension
     /**
      * @param Loader\YamlFileLoader $loader
      */
-    protected function loadYAMLFiles(Loader\YamlFileLoader $loader)
+    protected static function loadYAMLFiles(Loader\YamlFileLoader $loader)
     {
         $loader->load('parameters.yml');
     }
