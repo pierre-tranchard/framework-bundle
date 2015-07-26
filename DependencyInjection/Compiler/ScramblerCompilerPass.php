@@ -1,8 +1,7 @@
 <?php
 /**
  * \file ScramblerCompilerPass.php
- * \project 2Spark
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 14/01/15
  * \brief

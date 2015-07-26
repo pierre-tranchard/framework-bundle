@@ -1,8 +1,7 @@
 <?php
 /**
  * \file OTPGeneratorCompilerPass.php
- * \project Spark
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 06/05/15
  * \brief

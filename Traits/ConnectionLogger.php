@@ -1,8 +1,7 @@
 <?php
 /**
  * \file ConnectionLogger.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 26/02/15
  * \brief Trait for providing a set of methods related to Doctrine DBAL Connection

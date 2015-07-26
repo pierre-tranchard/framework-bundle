@@ -1,8 +1,7 @@
 <?php
 /**
  * \file OTPGeneratorTest.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 07/05/15
  * \brief

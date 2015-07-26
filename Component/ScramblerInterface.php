@@ -1,8 +1,7 @@
 <?php
 /**
  * \file ScramblerInterface.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 08/01/15
  * \brief Interface to be implemented for creating a scrambler

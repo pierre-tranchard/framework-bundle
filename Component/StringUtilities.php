@@ -1,8 +1,7 @@
 <?php
 /**
  * \file StringUtilities.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 26/02/15
  * \brief Provide a set of methods for manipulating string

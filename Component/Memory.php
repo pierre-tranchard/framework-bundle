@@ -1,8 +1,7 @@
 <?php
 /**
  * \file Memory.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 12/01/15
  * \brief Class designed to provide a readable string of memory consumption

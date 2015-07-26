@@ -1,8 +1,7 @@
 <?php
 /**
  * \file MultiCollectionsParamConverter.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 09/06/15
  * \brief
@@ -73,7 +72,7 @@ class MultiCollectionsParamConverter extends DoctrineParamConverter implements P
 
             if (null === $object) {
                 if ($index == (count($classes) - 1) && $configuration->isOptional() === false) {
-                    throw new NotFoundHttpException(sprintf('%s object not found.', implode(", ", $classes)));
+                    throw new NotFoundHttpException(sprintf('Object not found in class(es) %s.', implode(", ", $classes)));
                 }
                 continue;
             } else {

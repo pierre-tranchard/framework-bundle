@@ -1,8 +1,7 @@
 <?php
 /**
  * \file Logger.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 05/03/15
  * \brief

@@ -1,8 +1,7 @@
 <?php
 /**
  * \file IpTools.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 11/05/15
  * \brief Class designed to provide real IP address and detect whether the user is behind a onion router or a proxy

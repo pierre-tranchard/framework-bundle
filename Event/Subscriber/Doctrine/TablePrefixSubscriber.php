@@ -1,8 +1,7 @@
 <?php
 /**
  * \file TablePrefixSubscriber.php
- * \project Spark
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 10/06/15
  * \brief

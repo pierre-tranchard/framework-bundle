@@ -1,8 +1,7 @@
 <?php
 /**
  * \file ScramblerCompilerPassTest.php
- * \project 2spark-symfony2
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 18/04/15
  * \brief

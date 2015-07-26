@@ -1,8 +1,7 @@
 <?php
 /**
  * \file CacheableDocumentRepositoryTest.php
- * \project Spark
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 02/07/15
  * \brief

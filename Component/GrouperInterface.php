@@ -1,8 +1,7 @@
 <?php
 /**
  * \file GrouperInterface.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 08/06/15
  * \brief

@@ -1,8 +1,7 @@
 <?php
 /**
  * \file Logger.php
- * \project 2spark-Library
- * \author Pierre TRANCHARD
+ * \author Pierre TRANCHARD <pierre@tranchard.net>
  * \version 1.0
  * \date 26/02/15
  * \brief Ensure the logger property is set in order to use it
