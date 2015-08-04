@@ -31,8 +31,8 @@ class OTPGeneratorCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if ($container->hasParameter('spark_otp_generator_clients')) {
-            $otpClients = $container->getParameter('spark_otp_generator_clients');
+        if ($container->hasParameter('spark_framework.component.otp_generator_clients')) {
+            $otpClients = $container->getParameter('spark_framework.component.otp_generator_clients');
 
             if (is_array($otpClients)) {
                 foreach ($otpClients as $client => $otpOptions) {

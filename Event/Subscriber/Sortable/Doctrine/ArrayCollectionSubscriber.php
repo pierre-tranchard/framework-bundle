@@ -58,6 +58,9 @@ class ArrayCollectionSubscriber implements EventSubscriberInterface
         $this->accessor     = PropertyAccess::createPropertyAccessor();
     }
 
+    /**
+     * @param ItemsEvent $event
+     */
     public function items(ItemsEvent $event)
     {
         $currentRequest = $this->requestStack->getCurrentRequest();

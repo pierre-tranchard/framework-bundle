@@ -31,10 +31,10 @@ class ScramblerCompilerPassTest extends \PHPUnit_Framework_TestCase
         $compilerPass->process($containerBuilder);
 
         try {
-            $containerBuilder->getParameter('spark_scrambler_clients');
+            $containerBuilder->getParameter('spark_framework.component.scrambler_clients');
         } catch (\Exception $exception) {
             $this->assertEquals(
-                'You have requested a non-existent parameter "spark_scrambler_clients".',
+                'You have requested a non-existent parameter "spark_framework.component.scrambler_clients".',
                 $exception->getMessage()
             );
             $this->throwException($exception);
@@ -50,7 +50,7 @@ class ScramblerCompilerPassTest extends \PHPUnit_Framework_TestCase
         $compilerPass     = new ScramblerCompilerPass();
         $randomClientKey  = '72E5D627D685367C77AF9815B2750692F46F47E2FBBCF5255118A82EE94DC2BA';
         $containerBuilder->setParameter(
-            'spark_scrambler_clients',
+            'spark_framework.component.scrambler_clients',
             array(
                 'random_client' => $randomClientKey
             )

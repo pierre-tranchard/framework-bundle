@@ -31,10 +31,10 @@ class OTPGeneratorCompilerPassTest extends \PHPUnit_Framework_TestCase
         $compilerPass->process($containerBuilder);
 
         try {
-            $containerBuilder->getParameter('spark_otp_generator_clients');
+            $containerBuilder->getParameter('spark_framework.component.otp_generator_clients');
         } catch (\Exception $exception) {
             $this->assertEquals(
-                'You have requested a non-existent parameter "spark_otp_generator_clients".',
+                'You have requested a non-existent parameter "spark_framework.component.otp_generator_clients".',
                 $exception->getMessage()
             );
             $this->throwException($exception);
@@ -49,7 +49,7 @@ class OTPGeneratorCompilerPassTest extends \PHPUnit_Framework_TestCase
         $containerBuilder = new ContainerBuilder();
         $compilerPass     = new OTPGeneratorCompilerPass();
         $containerBuilder->setParameter(
-            'spark_otp_generator_clients',
+            'spark_framework.component.otp_generator_clients',
             array(
                 'random_client' => array(
                     'secret_seed' => 'D6C1F4CD546D478ED99C9B7C8C294A444A2DB8F109E0504474511C9EF8E9B604',

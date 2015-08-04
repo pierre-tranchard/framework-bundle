@@ -1,7 +1,7 @@
 <?php
 /**
  * \file Logger.php
- * \author Pierre TRANCHARD <pierre@tranchard.net>
+ * \author Benoit MAZIERE <benoit.maziere@gmail.com>
  * \version 1.0
  * \date 05/03/15
  * \brief

@@ -31,8 +31,8 @@ class ScramblerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if ($container->hasParameter('spark_scrambler_clients')) {
-            $scramblerClients = $container->getParameter('spark_scrambler_clients');
+        if ($container->hasParameter('spark_framework.component.scrambler_clients')) {
+            $scramblerClients = $container->getParameter('spark_framework.component.scrambler_clients');
 
             if (is_array($scramblerClients)) {
                 foreach ($scramblerClients as $client => $encryptionKey) {
