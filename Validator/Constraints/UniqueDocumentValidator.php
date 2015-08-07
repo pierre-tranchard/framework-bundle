@@ -15,7 +15,7 @@ use Spark\FrameworkBundle\Exception\NotImplementedException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-error_reporting(-1);
+
 /**
  * Class UniqueDocumentValidator
  *
