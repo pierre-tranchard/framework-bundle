@@ -10,6 +10,7 @@
 
 namespace Spark\FrameworkBundle\DependencyInjection\Compiler;
 
+use Spark\FrameworkBundle\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -31,17 +32,20 @@ class ScramblerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if ($container->hasParameter('spark_framework.component.scrambler_clients')) {
-            $scramblerClients = $container->getParameter('spark_framework.component.scrambler_clients');
-
+        $parameterName = sprintf('%s.component.scrambler_clients', Configuration::getRootNode());
+        if ($container->hasParameter($parameterName)) {
+            $scramblerClients   = $container->getParameter($parameterName);
+            $baseDefinitionName = sprintf('%s.component.scrambler', Configuration::getRootNode());
             if (is_array($scramblerClients)) {
                 foreach ($scramblerClients as $client => $encryptionKey) {
                     $definition = new Definition(
-                        $container->getParameter('spark_framework.component.scrambler.class'),
+                        $container->getParameter(
+                            sprintf('%s.class', $baseDefinitionName)
+                        ),
                         array($encryptionKey)
                     );
                     $definition->setPublic(false);
-                    $container->setDefinition(sprintf('spark_framework.component.scrambler.%s', $client), $definition);
+                    $container->setDefinition(sprintf('%s.%s', $baseDefinitionName, $client), $definition);
                 }
             }
         }
