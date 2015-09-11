@@ -9,7 +9,17 @@
     }
   ],
   "keywords": [
-    "2Spark Framework Bundle"
+    "2Spark Framework Bundle",
+    "Doctrine",
+    "MongoDB",
+    "KNP Menu",
+    "Param Converter",
+    "Validator",
+    "Varnish",
+    "Logger",
+    "Scrambler",
+    "One Time Password",
+    "Fixtures"
   ],
   "license": [
     "MIT"
@@ -35,10 +45,14 @@
     "doctrine/doctrine-fixtures-bundle": "^2.2"
   },
   "autoload": {
-    "psr-4": {"Spark\\FrameworkBundle\\": ""}
+    "psr-4": {
+      "Spark\\FrameworkBundle\\": ""
+    }
   },
   "autoload-dev": {
-    "psr-4": {"Spark\\FrameworkBundle\\Tests\\": "Tests/"}
+    "psr-4": {
+      "Spark\\FrameworkBundle\\Tests\\": "Tests/"
+    }
   },
   "minimum-stability": "dev",
   "extra": {
