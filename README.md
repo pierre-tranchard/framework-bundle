@@ -7,13 +7,13 @@ This bundle is designed to provide core components for your bundles.
 ----------
 
 Requirements
------------------
+------------
 > **This bundle relies on the following:**
 
    > - Symfony 2.7.*
 
 Bundle Parameters
---------------------------
+------------------
 
 ```
 #!yml
@@ -22,6 +22,14 @@ spark_framework.component.scrambler.class: Spark\FrameworkBundle\Component\Scram
 spark_framework.component.otp_generator.class: Spark\FrameworkBundle\Component\OTPGenerator
 ```
 
+Add it in your project
+----------------------
+> - ** composer require "2spark/framework-bundle" **
+> - ** Add the bundle in your registered bundles (AppKernel.php in app folder) **
+
+Detailed document
+-----------------
+- Resources/doc/
 
 What it provides
 -----------------
