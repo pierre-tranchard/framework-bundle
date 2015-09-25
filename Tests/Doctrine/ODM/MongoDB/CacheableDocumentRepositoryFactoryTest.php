@@ -82,5 +82,13 @@ class CacheableDocumentRepositoryFactoryTest extends \PHPUnit_Framework_TestCase
             '\Spark\FrameworkBundle\Doctrine\ODM\MongoDB\CacheableDocumentRepository',
             $factory->getRepository($dmMock, 'SparkFrameworkBundle\Document\Document')
         );
+        $reflection = new \ReflectionClass($factory);
+        $repositoryList = $reflection->getProperty('repositoryList');
+        $repositoryList->setAccessible(true);
+        $this->assertNotEmpty($repositoryList->getValue($factory));
+        $this->assertInstanceOf(
+            '\Spark\FrameworkBundle\Doctrine\ODM\MongoDB\CacheableDocumentRepository',
+            $factory->getRepository($dmMock, 'SparkFrameworkBundle\Document\Document')
+        );
     }
 }
