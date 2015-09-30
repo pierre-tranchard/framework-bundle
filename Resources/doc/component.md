@@ -36,6 +36,6 @@ The OTPGenerator class is an implementation of the interface. It takes a 32 byte
 This class is able to generate a unique one time password during a time window. It can be helpful for two-factors authentication for instance.
 > - **Scrambler / ScramblerInterface:**
 ScramblerInterface is an interface designed to create implementation for encrypting and decrypting a string.
-The Scrambler class is an implementation of the interface. This class encrypt and decrypt string thanks to a 32 bytes key (64 characters) and a sha256 algorithm.
+The Scrambler class is an implementation of the interface. This class encrypt and decrypt string thanks to a 32 bytes key (64 characters).
 > - **StringUtilities:**
 This class exposed several methods, such as, a method to get the filename from a string without its extension, a method to slugify a string and another method designed to replace white spaces by a character.
