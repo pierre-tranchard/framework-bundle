@@ -48,7 +48,7 @@ class FormFactory
      * @param string               $type
      * @param array                $validationGroups
      */
-    public function __construct(FormFactoryInterface $formFactory, $name, $type, array $validationGroups = null)
+    public function __construct(FormFactoryInterface $formFactory, $name, $type, array $validationGroups = array())
     {
         $this->formFactory      = $formFactory;
         $this->name             = $name;
@@ -59,15 +59,17 @@ class FormFactory
     /**
      * Create form
      *
+     * @param array $validationGroups
+     *
      * @return FormInterface
      */
-    public function createForm()
+    public function createForm(array $validationGroups = array())
     {
         return $this->formFactory->createNamed(
             $this->name,
             $this->type,
             null,
-            array('validation_groups' => $this->validationGroups)
+            array('validation_groups' => array_merge($this->validationGroups, $validationGroups))
         );
     }
 }
