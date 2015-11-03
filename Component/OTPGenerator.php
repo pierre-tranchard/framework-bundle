@@ -19,6 +19,7 @@ use Spark\FrameworkBundle\Traits\HexadecimalValidator;
  */
 class OTPGenerator implements OTPGeneratorInterface
 {
+
     use HexadecimalValidator;
 
     /**
