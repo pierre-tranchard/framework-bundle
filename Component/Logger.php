@@ -21,6 +21,7 @@ use Symfony\Component\Finder\Finder;
  */
 class Logger implements LoggerInterface
 {
+
     /**
      * @var string
      */
