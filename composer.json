@@ -5,7 +5,7 @@
   "authors": [
     {
       "name": "pierretranchard",
-      "email": "pierre.tranchard@2spark.com"
+      "email": "pierre@tranchard.net"
     }
   ],
   "keywords": [
@@ -28,7 +28,7 @@
     "php": ">=5.4.37"
   },
   "require-dev": {
-    "symfony/symfony": "~2.7@beta",
+    "symfony/symfony": "~2.7|~2.8",
     "doctrine/orm": "~2.2,>=2.2.3,<2.5",
     "doctrine/dbal": "<2.5",
     "doctrine/doctrine-bundle": "~1.4",

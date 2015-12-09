@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class SparkFrameworkExtension extends Extension
 {
+
     /**
      * {@inheritdoc}
      */
