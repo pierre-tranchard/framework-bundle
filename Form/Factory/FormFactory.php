@@ -2,8 +2,8 @@
 /**
  * \file FormFactory.php
  * \author Pierre TRANCHARD <pierre@tranchard.net>
- * \version 1.0
- * \date 26/05/15
+ * \version 1.5
+ * \date 02/06/15
  * \brief
  * \details
  */
@@ -65,9 +65,22 @@ class FormFactory
      */
     public function createForm(array $validationGroups = array())
     {
+        /**
+         * BC check
+         */
+        if (\AppKernel::VERSION_ID < 20800) {
+
+            return $this->formFactory->createNamed(
+                $this->name,
+                $this->type,
+                null,
+                array('validation_groups' => array_merge($this->validationGroups, $validationGroups))
+            );
+        }
+
         return $this->formFactory->createNamed(
             $this->name,
-            $this->type,
+            is_object($this->type) ? get_class($this->type) : $this->type,
             null,
             array('validation_groups' => array_merge($this->validationGroups, $validationGroups))
         );
