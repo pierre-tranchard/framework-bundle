@@ -17,6 +17,8 @@
             <argument type="expression">container.hasParameter('table_prefix') ? parameter('table_prefix') : null</argument>
             <tag name="doctrine.event_subscriber" />
         </service>
+        <service id="spark_framework.services.op_cache_manager" class="Spark\FrameworkBundle\Services\OPCacheManager">
+        </service>
     </services>
 
 </container>
